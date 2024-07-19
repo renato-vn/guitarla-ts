@@ -1,4 +1,15 @@
-import React from 'react'
+import type { CartItem } from '../interfaces/cart'
+import type { Guitar } from '../interfaces/guitar'
+
+interface HeaderProps {
+    cart: CartItem[]
+    removeFromCart: (id: Guitar['id']) => void
+    increaseQuantity: (id: Guitar['id']) => void
+    decreaseQuantity: (id: Guitar['id']) => void
+    clearCart: () => void
+    isEmpty: boolean
+    cartTotal: number
+}
 
 const Header = ({
     cart,
@@ -8,7 +19,7 @@ const Header = ({
     clearCart,
     isEmpty,
     cartTotal,
-}) => {
+}: HeaderProps) => {
     return (
         <header className="py-5 header">
             <div className="container-xl">

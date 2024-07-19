@@ -1,6 +1,11 @@
-import React from 'react'
+import type { Guitar } from '../interfaces/guitar'
 
-const Guitar = ({ guitar, addToCart }) => {
+interface GuitarProps {
+    guitar: Guitar
+    addToCart: (item: Guitar) => void
+}
+
+const Guitar = ({ guitar, addToCart }: GuitarProps) => {
     const { name, image, description, price } = guitar
 
     return (
